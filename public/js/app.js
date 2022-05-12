@@ -5450,7 +5450,7 @@ function _arrayWithHoles(arr) { if (Array.isArray(arr)) return arr; }
 
 
 
-var API_URL = "http://127.0.0.1:8000/api";
+var API_URL = "https://gila-software-test.herokuapp.com/api";
 
 function AttributeForm(props) {
   var navigate = (0,react_router_dom__WEBPACK_IMPORTED_MODULE_3__.useNavigate)();
@@ -5607,7 +5607,7 @@ function _arrayWithHoles(arr) { if (Array.isArray(arr)) return arr; }
 
 
 
-var API_URL = "http://127.0.0.1:8000/api";
+var API_URL = "https://gila-software-test.herokuapp.com/api";
 
 function CategoryForm(props) {
   var navigate = (0,react_router_dom__WEBPACK_IMPORTED_MODULE_3__.useNavigate)();
@@ -5800,7 +5800,7 @@ function _arrayWithHoles(arr) { if (Array.isArray(arr)) return arr; }
 
 
 
-var API_URL = "http://127.0.0.1:8000/api";
+var API_URL = "https://gila-software-test.herokuapp.com/api";
 
 function ProductForm(props) {
   var navigate = (0,react_router_dom__WEBPACK_IMPORTED_MODULE_3__.useNavigate)();
@@ -6220,7 +6220,7 @@ function _arrayWithHoles(arr) { if (Array.isArray(arr)) return arr; }
 
 
 
-var API_URL = "http://127.0.0.1:8000/api";
+var API_URL = "https://gila-software-test.herokuapp.com/api";
 
 function SpecForm(props) {
   var navigate = (0,react_router_dom__WEBPACK_IMPORTED_MODULE_3__.useNavigate)();
@@ -6462,7 +6462,7 @@ function _arrayWithHoles(arr) { if (Array.isArray(arr)) return arr; }
 
 
 
-var API_URL = "http://127.0.0.1:8000/api";
+var API_URL = "https://gila-software-test.herokuapp.com/api";
 
 function Attributes() {
   var _useState = (0,react__WEBPACK_IMPORTED_MODULE_0__.useState)([]),
@@ -6598,7 +6598,7 @@ function _arrayWithHoles(arr) { if (Array.isArray(arr)) return arr; }
 
 
 
-var API_URL = "http://127.0.0.1:8000/api";
+var API_URL = "https://gila-software-test.herokuapp.com/api";
 
 function Categories() {
   var _useState = (0,react__WEBPACK_IMPORTED_MODULE_0__.useState)([]),
@@ -6966,7 +6966,7 @@ function _arrayWithHoles(arr) { if (Array.isArray(arr)) return arr; }
 
 
 
-var API_URL = "http://127.0.0.1:8000/api";
+var API_URL = "https://gila-software-test.herokuapp.com/api";
 
 function Products() {
   var _useState = (0,react__WEBPACK_IMPORTED_MODULE_0__.useState)([]),
@@ -7190,7 +7190,7 @@ function _arrayWithHoles(arr) { if (Array.isArray(arr)) return arr; }
 
 
 
-var API_URL = "http://127.0.0.1:8000/api";
+var API_URL = "https://gila-software-test.herokuapp.com/api";
 
 function Specs() {
   var _useState = (0,react__WEBPACK_IMPORTED_MODULE_0__.useState)([]),
