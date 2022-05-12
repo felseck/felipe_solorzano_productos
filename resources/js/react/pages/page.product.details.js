@@ -70,7 +70,6 @@ function ProductDetails(props) {
           <li key={`specs_${index}`}>
             {spec.spec.name}
 
-             <h5>Atributos:</h5>
              <ul>
             {spec.attributes?spec.attributes.map((attribute,index_)=>{
         return(
