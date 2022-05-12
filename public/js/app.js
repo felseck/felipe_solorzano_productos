@@ -5891,7 +5891,6 @@ function ProductForm(props) {
           'attributes': spec_attributes
         };
       });
-      console.log('specsspecs', attributes);
       setSelectedSpecs(specs);
       setSelectedAttributes(attributes);
     })["catch"](function (error) {
@@ -6035,7 +6034,6 @@ function ProductForm(props) {
     setError(null);
   }
 
-  console.log(category_id);
   return /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_2__.jsxs)("div", {
     children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_2__.jsxs)("h1", {
       children: [action == 'update' ? 'Editar' : 'Crear', " Producto"]
@@ -6148,7 +6146,7 @@ function ProductForm(props) {
         })]
       }), specs.map(function (spec, index) {
         var specAttributes = selectedAttributes.find(function (specAttr) {
-          return specAttr.spec_id == spec.id;
+          if (specAttr) return specAttr.spec_id == spec.id; //  else null;
         });
         specAttributes = specAttributes ? specAttributes.attributes : [];
         if (selectedSpecs.indexOf(spec.id) != -1) return /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_2__.jsxs)("div", {

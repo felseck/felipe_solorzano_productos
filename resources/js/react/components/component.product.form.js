@@ -74,8 +74,6 @@ function ProductForm(props) {
 
             })
 
-            console.log('specsspecs',attributes);
-
             setSelectedSpecs(specs);
             setSelectedAttributes(attributes);
 
@@ -295,7 +293,6 @@ function ProductForm(props) {
         setError(null);
       }
 
-      console.log(category_id)
 
     return (
         <div>
@@ -343,7 +340,10 @@ function ProductForm(props) {
            {specs.map((spec,index)=>{
             
             var specAttributes = selectedAttributes.find((specAttr)=>{
+
+                  if(specAttr)
                    return specAttr.spec_id == spec.id;
+                 //  else null;
             });
 
             specAttributes = specAttributes?specAttributes.attributes:[];
