@@ -57,7 +57,7 @@ function CategoryForm(props) {
       const createCategory = ()=>{
 
           axios.post(
-            `${API_URL}/categories/`,params)
+            `${API_URL}/categories`,params)
             .then(response => {
 
               navigate(`/categories`);

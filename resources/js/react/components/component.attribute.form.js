@@ -54,7 +54,7 @@ function AttributeForm(props) {
       const createAttribute = ()=>{
 
           axios.post(
-            `${API_URL}/attributes/`,params)
+            `${API_URL}/attributes`,params)
             .then(response => {
 
               navigate(`/attributes`);

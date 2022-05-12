@@ -5489,7 +5489,7 @@ function AttributeForm(props) {
   }; //creamos el atributo
 
   var createAttribute = function createAttribute() {
-    axios.post("".concat(API_URL, "/attributes/"), params).then(function (response) {
+    axios.post("".concat(API_URL, "/attributes"), params).then(function (response) {
       navigate("/attributes");
     })["catch"](function (error) {
       setError(error);
@@ -5653,7 +5653,7 @@ function CategoryForm(props) {
   }; //creamos el producto
 
   var createCategory = function createCategory() {
-    axios.post("".concat(API_URL, "/categories/"), params).then(function (response) {
+    axios.post("".concat(API_URL, "/categories"), params).then(function (response) {
       navigate("/categories");
     })["catch"](function (error) {
       setError(error);
@@ -5910,7 +5910,7 @@ function ProductForm(props) {
   }; //creamos el producto
 
   var createProduct = function createProduct() {
-    axios.post("".concat(API_URL, "/products/"), params).then(function (response) {
+    axios.post("".concat(API_URL, "/products"), params).then(function (response) {
       navigate("/products");
     })["catch"](function (error) {
       setError(error);
@@ -6257,7 +6257,7 @@ function SpecForm(props) {
   }; //creamos la especificacion
 
   var createSpec = function createSpec() {
-    axios.post("".concat(API_URL, "/specs/"), params).then(function (response) {
+    axios.post("".concat(API_URL, "/specs"), params).then(function (response) {
       navigate("/specs");
     })["catch"](function (error) {
       setError(error);
@@ -6881,15 +6881,23 @@ function ProductDetails(props) {
           children: ["Categoria:", product.category ? product.category.name : '']
         }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_1__.jsxs)("p", {
           className: "card-text",
-          children: ["Especificaciones:", product.specs ? product.specs.map(function (spec) {
-            return /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_1__.jsxs)("span", {
-              children: [spec.spec.name, "Atributos:", spec.attributes ? spec.attributes.map(function (attribute) {
-                return /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_1__.jsx)("span", {
-                  children: attribute.attribute.name
-                });
-              }) : '']
-            });
-          }) : '']
+          children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_1__.jsx)("h3", {
+            children: "Especificaciones:"
+          }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_1__.jsx)("ul", {
+            children: product.specs ? product.specs.map(function (spec, index) {
+              return /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_1__.jsxs)("li", {
+                children: [spec.spec.name, /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_1__.jsx)("h5", {
+                  children: "Atributos:"
+                }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_1__.jsx)("ul", {
+                  children: spec.attributes ? spec.attributes.map(function (attribute, index_) {
+                    return /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_1__.jsx)("li", {
+                      children: attribute.attribute.name
+                    }, "attributes_".concat(index_));
+                  }) : ''
+                })]
+              }, "specs_".concat(index));
+            }) : ''
+          })]
         })]
       })
     })]

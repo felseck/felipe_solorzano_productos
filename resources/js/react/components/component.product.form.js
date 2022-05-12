@@ -106,7 +106,7 @@ function ProductForm(props) {
       const createProduct = ()=>{
 
           axios.post(
-            `${API_URL}/products/`,params)
+            `${API_URL}/products`,params)
             .then(response => {
 
               navigate(`/products`);

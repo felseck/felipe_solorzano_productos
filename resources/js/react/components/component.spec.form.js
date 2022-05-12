@@ -54,7 +54,7 @@ function SpecForm(props) {
       const createSpec = ()=>{
 
           axios.post(
-            `${API_URL}/specs/`,params)
+            `${API_URL}/specs`,params)
             .then(response => {
 
               navigate(`/specs`);

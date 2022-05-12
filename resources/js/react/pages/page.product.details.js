@@ -63,25 +63,30 @@ function ProductDetails(props) {
 
 
     <p className="card-text">
-      Especificaciones:
-      {product.specs?product.specs.map((spec)=>{
+    <h3>Especificaciones:</h3>
+      <ul>
+      {product.specs?product.specs.map((spec,index)=>{
         return(
-          <span>
+          <li key={`specs_${index}`}>
             {spec.spec.name}
 
-             Atributos:
-            {spec.attributes?spec.attributes.map((attribute)=>{
+             <h5>Atributos:</h5>
+             <ul>
+            {spec.attributes?spec.attributes.map((attribute,index_)=>{
         return(
-          <span>
+          <li key={`attributes_${index_}`}>
             {attribute.attribute.name}
-          </span>
+          </li>
+        )
+      }):''}
+      </ul>
+
+
+          </li>
         )
       }):''}
 
-
-          </span>
-        )
-      }):''}
+</ul>
     </p>
 
   </div>
