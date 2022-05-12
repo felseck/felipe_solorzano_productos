@@ -4,7 +4,7 @@
 
 ### 2.- Crear una base de datos
 
-### 3.- Modificar el archivo .env las sigueintes lineas, el app url y la base de datos
+### 3.- Modificar el archivo .env las siguientes lineas, el app url y la base de datos
      
 #### APP_URL=http://localhost:8000
 
