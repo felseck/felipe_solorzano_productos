@@ -355,7 +355,7 @@ function ProductForm(props) {
            if(selectedSpecs.indexOf(spec.id) != -1)
            return(
            <div key={`specs_${index}_${spec.id}_2`} className="form-group mt-3">
-              <label htmlFor="create-specs">Attributos para {spec.name} {index}</label>
+              <label htmlFor="create-specs">Attributos para {spec.name}</label>
               
               <select multiple value={specAttributes} className="form-control" id="create-specs" onChange={(e)=>
                  selectAttributes(e,spec,index)}>

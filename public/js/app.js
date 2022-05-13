@@ -6151,7 +6151,7 @@ function ProductForm(props) {
           className: "form-group mt-3",
           children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_2__.jsxs)("label", {
             htmlFor: "create-specs",
-            children: ["Attributos para ", spec.name, " ", index]
+            children: ["Attributos para ", spec.name]
           }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_2__.jsx)("select", {
             multiple: true,
             value: specAttributes,
