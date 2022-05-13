@@ -1,8 +1,12 @@
 import React, {useState,useEffect} from "react";
+import AddToCart from "../components/component.cart.add";
 
 import {
   useParams
 } from "react-router-dom";
+
+import { useSelector, useDispatch } from "react-redux";
+import {add} from "../actions/actions.cart.js";
 
 
 const API_URL = "http://127.0.0.1:8000/api";
@@ -10,6 +14,10 @@ const API_URL = "http://127.0.0.1:8000/api";
 function ProductDetails(props) { 
 
     let { id } = useParams();
+
+    const cart = useSelector((state) => state.cart);
+
+    const dispatch = useDispatch();
 
     const [product, setProduct] = useState({});
     const [error, setError] = useState(null);
@@ -78,6 +86,10 @@ function ProductDetails(props) {
             }):''}
          </ul>
          </div>
+         
+         {/* add(product,3)  argumentos 1 = objeto del producto, argumento 2 = cantidad de productos */}
+         <button className="btn btn-success" onClick={() => dispatch(add(product,2))}>Agregar al carrito {cart.length}</button>
+           
       </div>
    </div>
 </div>

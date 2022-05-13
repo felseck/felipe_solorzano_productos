@@ -24,6 +24,9 @@
         "sass-loader": "^11.0.1"
     },
     "dependencies": {
-        "react-router-dom": "^6.3.0"
+        "react-redux": "^8.0.1",
+        "react-router-dom": "^6.3.0",
+        "redux": "^4.2.0",
+        "redux-thunk": "^2.4.1"
     }
 }
