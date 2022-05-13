@@ -14,6 +14,16 @@ function Cart(props) {
     const [error, setError] = useState(null);
     
       
+    const grandTotal = ()=>{
+      let total = 0;
+      cart.map((item)=>{
+       
+        total+= item.total;
+
+      })
+
+      return total;
+    }
      
       //mostramos un error en caso de que suceda
       if(error){
@@ -24,28 +34,29 @@ function Cart(props) {
 
     return (
       <div>
-
-<button className="btn btn-success" onClick={() => dispatch(clear())}>Vaciar carrito</button>
-           
-    <div className="pt-3 pb-3"><h5>Hay {cart.length} productos en el carrito</h5></div>  
+      <button className="btn btn-success" onClick={() => dispatch(clear())}>Vaciar carrito</button>
+      <div className="pt-3 pb-3">
+         <h5>Hay {cart.length} productos en el carrito</h5>
+      </div>
       {cart.map((item,index)=>{
-
-      
-   return(
-        <div key={index} className="list-group">
-  <a href="#" className="list-group-item list-group-item-action flex-column align-items-start">
-    <div className="d-flex w-100 justify-content-between">
-      <h5 className="mb-1">{item.name}</h5>
-      <small>total:<b> ${item.total}</b></small>
-    </div>
-    <p className="mb-1">Precio: ${item.price}</p>
-    <small>Cantidad:{item.qty}</small>
-  </a>
-  
-</div>
+      return(
+      <div key={index} className="list-group">
+         <a href="#" className="list-group-item list-group-item-action flex-column align-items-start">
+            <div className="d-flex w-100 justify-content-between">
+               <h5 className="mb-1">{item.name}</h5>
+               <small>total:<b> ${item.total}</b></small>
+            </div>
+            <p className="mb-1">Precio: ${item.price}</p>
+            <small>Cantidad:{item.qty}</small>
+         </a>
+      </div>
    )
    
 })}
+
+<div className="pt-3 pb-3">
+         <h5>Total a pagar ${grandTotal()}</h5>
+      </div>
 
 </div>
 

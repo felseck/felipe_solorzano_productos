@@ -6742,7 +6742,15 @@ function Cart(props) {
   var _useState = (0,react__WEBPACK_IMPORTED_MODULE_0__.useState)(null),
       _useState2 = _slicedToArray(_useState, 2),
       error = _useState2[0],
-      setError = _useState2[1]; //mostramos un error en caso de que suceda
+      setError = _useState2[1];
+
+  var grandTotal = function grandTotal() {
+    var total = 0;
+    cart.map(function (item) {
+      total += item.total;
+    });
+    return total;
+  }; //mostramos un error en caso de que suceda
 
 
   if (error) {
@@ -6786,6 +6794,11 @@ function Cart(props) {
           })]
         })
       }, index);
+    }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_3__.jsx)("div", {
+      className: "pt-3 pb-3",
+      children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_3__.jsxs)("h5", {
+        children: ["Total a pagar $", grandTotal()]
+      })
     })]
   });
 }
