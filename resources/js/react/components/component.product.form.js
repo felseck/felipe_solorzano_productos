@@ -67,10 +67,10 @@ function ProductForm(props) {
                     
                 })
 
-                attributes[index] = {
+                attributes.push({
                     'spec_id':spec.spec_id,
                     'attributes':spec_attributes
-                };
+                });
 
             })
 
