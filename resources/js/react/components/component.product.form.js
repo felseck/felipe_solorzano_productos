@@ -75,7 +75,8 @@ function ProductForm(props) {
             })
 
             setSelectedSpecs(specs);
-            setSelectedAttributes(attributes);
+           
+           // setSelectedAttributes(attributes);
 
             
             
@@ -278,10 +279,9 @@ function ProductForm(props) {
 
         selectedAttributes[index] = {
           'spec_id':spec.id,
-          'spec_name':spec.name,
           'attributes':Array.from(e.target.selectedOptions, option => Number(option.value))
         }
-
+        
         setSelectedAttributes([...selectedAttributes])
 
       }
@@ -338,21 +338,24 @@ function ProductForm(props) {
               </select>
            </div>
            {specs.map((spec,index)=>{
-            
-            var specAttributes = selectedAttributes.find((specAttr)=>{
 
-                  if(specAttr)
-                   return specAttr.spec_id == spec.id;
+
+            
+            var specAttributes = selectedAttributes.find((specAttr,index)=>{
+
+                 if(specAttr)
+                 return specAttr.spec_id == spec.id;
                  //  else null;
             });
 
             specAttributes = specAttributes?specAttributes.attributes:[];
 
 
+
            if(selectedSpecs.indexOf(spec.id) != -1)
            return(
            <div key={`specs_${index}_${spec.id}_2`} className="form-group mt-3">
-              <label htmlFor="create-specs">Attributos para {spec.name}</label>
+              <label htmlFor="create-specs">Attributos para {spec.name} {index}</label>
               
               <select multiple value={specAttributes} className="form-control" id="create-specs" onChange={(e)=>
                  selectAttributes(e,spec,index)}>

@@ -5891,8 +5891,7 @@ function ProductForm(props) {
           'attributes': spec_attributes
         };
       });
-      setSelectedSpecs(specs);
-      setSelectedAttributes(attributes);
+      setSelectedSpecs(specs); // setSelectedAttributes(attributes);
     })["catch"](function (error) {
       setError(error);
     });
@@ -6020,7 +6019,6 @@ function ProductForm(props) {
   var selectAttributes = function selectAttributes(e, spec, index) {
     selectedAttributes[index] = {
       'spec_id': spec.id,
-      'spec_name': spec.name,
       'attributes': Array.from(e.target.selectedOptions, function (option) {
         return Number(option.value);
       })
@@ -6145,7 +6143,7 @@ function ProductForm(props) {
           })
         })]
       }), specs.map(function (spec, index) {
-        var specAttributes = selectedAttributes.find(function (specAttr) {
+        var specAttributes = selectedAttributes.find(function (specAttr, index) {
           if (specAttr) return specAttr.spec_id == spec.id; //  else null;
         });
         specAttributes = specAttributes ? specAttributes.attributes : [];
@@ -6153,7 +6151,7 @@ function ProductForm(props) {
           className: "form-group mt-3",
           children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_2__.jsxs)("label", {
             htmlFor: "create-specs",
-            children: ["Attributos para ", spec.name]
+            children: ["Attributos para ", spec.name, " ", index]
           }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_2__.jsx)("select", {
             multiple: true,
             value: specAttributes,
