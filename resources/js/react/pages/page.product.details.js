@@ -57,7 +57,7 @@ function ProductDetails(props) {
          <p className="card-text">
             Categoria:{product.category?product.category.name:''}
          </p>
-         <p className="card-text">
+         <div className="">
          <h3>Especificaciones:</h3>
          <ul>
             {product.specs?product.specs.map((spec,index)=>{
@@ -77,7 +77,7 @@ function ProductDetails(props) {
             )
             }):''}
          </ul>
-         </p>
+         </div>
       </div>
    </div>
 </div>
